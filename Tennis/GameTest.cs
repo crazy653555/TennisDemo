@@ -18,109 +18,77 @@ namespace Tennis
         [Test]
         public void LoveAllTests()
         {
-            var player1 = new Player()
+            ComparerResult(new Player()
             {
                 Name = "Joey",
                 Value = 0
-            };
-
-            var player2 = new Player()
+            }, new Player()
             {
                 Name = "Tom",
                 Value = 0
-            };
+            }, "Love All");
 
-            var showResult = _game.ShowResult(player1, player2);
-
-            showResult.Should().Be("Love All");
-        }
-
-
-        [Test]
-        public void FifteenAllTests()
-        {
-            var player1 = new Player()
+            ComparerResult(new Player()
             {
                 Name = "Joey",
                 Value = 1
-            };
-
-            var player2 = new Player()
+            }, new Player()
             {
                 Name = "Tom",
                 Value = 1
-            };
+            }, "Fifteen All");
 
-            var showResult = _game.ShowResult(player1, player2);
-
-            showResult.Should().Be("Fifteen All");
-        }
-
-
-        [Test]
-        public void ThirtyAllTests()
-        {
-            var player1 = new Player()
+            ComparerResult(new Player()
             {
                 Name = "Joey",
                 Value = 2
-            };
-
-            var player2 = new Player()
+            }, new Player()
             {
                 Name = "Tom",
                 Value = 2
-            };
+            }, "Thirty All");
 
-            var showResult = _game.ShowResult(player1, player2);
-
-            showResult.Should().Be("Thirty All");
-        }
-
-        [Test]
-        public void FortyAllTests()
-        {
-            var player1 = new Player()
+            ComparerResult(new Player()
             {
                 Name = "Joey",
                 Value = 3
-            };
-
-            var player2 = new Player()
+            }, new Player()
             {
                 Name = "Tom",
                 Value = 3
-            };
-
-            var showResult = _game.ShowResult(player1, player2);
-
-            showResult.Should().Be("Forty All");
+            }, "Forty All");
         }
+
 
         [Test]
         public void DeuceTests()
         {
-            var player1 = new Player()
+            ComparerResult(new Player()
             {
                 Name = "Joey",
                 Value = 4
-            };
-
-            var player2 = new Player()
+            }, new Player()
             {
                 Name = "Tom",
                 Value = 4
-            };
+            }, "Deuce");
 
-            var showResult = _game.ShowResult(player1, player2);
-
-            showResult.Should().Be("Deuce");
+            ComparerResult(new Player()
+            {
+                Name = "Joey",
+                Value = 5
+            }, new Player()
+            {
+                Name = "Tom",
+                Value = 5
+            }, "Deuce");
         }
 
 
         [Test]
         public void ComparerTests()
         {
+
             ComparerResult(new Player()
             {
                 Name = "Joey",
@@ -152,6 +120,15 @@ namespace Tennis
                 Value = 3
             }, "Joey Adv");
 
+            ComparerResult(new Player()
+            {
+                Name = "Joey",
+                Value = 3
+            }, new Player()
+            {
+                Name = "Tom",
+                Value = 4
+            }, "Tom Adv");
 
             ComparerResult(new Player()
             {
@@ -173,7 +150,7 @@ namespace Tennis
                 Name = "Tom",
                 Value = 7
             }, "Tom Win");
-            
+
             ComparerResult(new Player()
             {
                 Name = "Joey",
