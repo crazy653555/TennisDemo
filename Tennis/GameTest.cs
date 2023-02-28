@@ -151,6 +151,38 @@ namespace Tennis
                 Name = "Tom",
                 Value = 3
             }, "Joey Adv");
+
+
+            ComparerResult(new Player()
+            {
+                Name = "Joey",
+                Value = 5
+            }, new Player()
+            {
+                Name = "Tom",
+                Value = 6
+            }, "Tom Adv");
+
+
+            ComparerResult(new Player()
+            {
+                Name = "Joey",
+                Value = 5
+            }, new Player()
+            {
+                Name = "Tom",
+                Value = 7
+            }, "Tom Win");
+            
+            ComparerResult(new Player()
+            {
+                Name = "Joey",
+                Value = 7
+            }, new Player()
+            {
+                Name = "Tom",
+                Value = 5
+            }, "Joey Win");
         }
 
         private void ComparerResult(Player player1, Player player2, string output)

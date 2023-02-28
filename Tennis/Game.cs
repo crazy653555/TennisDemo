@@ -23,8 +23,27 @@ public class Game
         }
         else
         {
+            if (comparerResult == 1 && player1.Value > 3)
+            {
+                showResult = $"{player1.Name} Adv";
+            }
+            else if (comparerResult == -1 && player2.Value > 3)
+            {
+                showResult = $"{player2.Name} Adv";
+            }
+            else if (comparerResult == 2 && player1.Value > 3)
+            {
+                showResult = $"{player1.Name} Win";
+            }
+            else if (comparerResult == -2 && player2.Value > 3)
+            {
 
-            showResult = $"{CountNameLookup[player1.Value]} {CountNameLookup[player2.Value]}";
+                showResult = $"{player2.Name} Win";
+            }
+            else
+            {
+                showResult = $"{CountNameLookup[player1.Value]} {CountNameLookup[player2.Value]}";
+            }
         }
 
         return showResult;
